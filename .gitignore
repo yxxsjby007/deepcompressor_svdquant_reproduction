@@ -186,9 +186,9 @@ wandb/
 **/*-5000/
 
 # 实验输出目录
-examples/diffusion/runs/
-examples/diffusion/baselines/
-examples/diffusion/datasets/
+# examples/diffusion/runs/
+# examples/diffusion/baselines/
+# examples/diffusion/datasets/
 
 # 模型检查点和缓存
 *.safetensors
