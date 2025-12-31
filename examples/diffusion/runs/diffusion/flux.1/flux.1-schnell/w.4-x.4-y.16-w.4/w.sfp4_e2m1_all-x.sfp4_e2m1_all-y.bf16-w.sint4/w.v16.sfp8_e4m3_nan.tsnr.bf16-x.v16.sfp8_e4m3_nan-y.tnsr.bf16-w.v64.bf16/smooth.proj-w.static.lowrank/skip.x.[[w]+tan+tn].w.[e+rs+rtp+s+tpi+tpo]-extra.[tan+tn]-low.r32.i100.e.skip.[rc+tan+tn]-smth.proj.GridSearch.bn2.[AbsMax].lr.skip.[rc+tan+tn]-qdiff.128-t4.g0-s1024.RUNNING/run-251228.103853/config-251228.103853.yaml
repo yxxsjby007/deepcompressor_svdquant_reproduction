@@ -1,0 +1,253 @@
+enable_cache: true
+cache:
+  root: runs
+output:
+  root: runs
+  dirname: skip.x.[[w]+tan+tn].w.[e+rs+rtp+s+tpi+tpo]-extra.[tan+tn]-low.r32.i100.e.skip.[rc+tan+tn]-smth.proj.GridSearch.bn2.[AbsMax].lr.skip.[rc+tan+tn]-qdiff.128-t4.g0-s1024
+  job: run
+pipeline:
+  name: flux.1-schnell
+  path: ''
+  dtype: torch.bfloat16
+  device: cuda
+  shift_activations: false
+  enable_lora: false
+  task: text-to-image
+eval:
+  protocol: fmeuler4-g0
+  num_gpus: 1
+  batch_size: 1
+  batch_size_per_gpu: 1
+  height: null
+  width: null
+  clean_caption: null
+  num_steps: 4
+  guidance_scale: 0
+  num_samples: 1024
+  benchmarks:
+  - MJHQ
+  gt_metrics:
+  - clip_iqa
+  - clip_score
+  - image_reward
+  - fid
+  ref_metrics:
+  - psnr
+  - lpips
+  - ssim
+  - fid
+  gen_root: '{output}/{job}'
+  ref_root: /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0
+  gt_stats_root: benchmarks/stats
+  control_root: benchmarks
+  chunk_start: 0
+  chunk_step: 1
+  chunk_only: false
+quant:
+  wgts:
+    dtype: sfp4_e2m1_all
+    zero_point: null
+    group_shapes:
+    - - -1
+      - -1
+      - -1
+    - - 1
+      - 16
+      - 1
+    scale_dtypes:
+    - null
+    - sfp8_e4m3_nan
+    enable_kernel_gptq: false
+    enable_low_rank: true
+    low_rank:
+      rank: 32
+      exclusive: false
+      compensate: false
+      degree: 2
+      objective: OutputsError
+      strategy: Manual
+      sample_batch_size: 32
+      sample_size: -1
+      outputs_device: cpu
+      num_iters: 100
+      early_stop: true
+      skips:
+      - down_resblock_conv
+      - down_transformer_add_norm
+      - down_transformer_norm
+      - mid_resblock_conv
+      - mid_transformer_add_norm
+      - mid_transformer_norm
+      - transformer_add_norm
+      - transformer_norm
+      - up_resblock_conv
+      - up_transformer_add_norm
+      - up_transformer_norm
+    enable_calib_range: true
+    calib_range:
+      degree: 2
+      objective: OutputsError
+      strategy: Manual
+      granularity: Layer
+      element_batch_size: -1
+      sample_batch_size: 32
+      element_size: -1
+      sample_size: -1
+      pre_reshape: true
+      outputs_device: cpu
+      ratio: 1.0
+      max_shrink: 0.2
+      max_expand: 1.0
+      num_grids: 80
+      allow_scale: false
+      skips: []
+    skips:
+    - down_resblock_shortcut
+    - down_resblock_time_proj
+    - down_sample
+    - down_transformer_proj_in
+    - down_transformer_proj_out
+    - input_embed
+    - mid_resblock_shortcut
+    - mid_resblock_time_proj
+    - mid_transformer_proj_in
+    - mid_transformer_proj_out
+    - output_embed
+    - text_embed
+    - time_embed
+    - up_resblock_shortcut
+    - up_resblock_time_proj
+    - up_sample
+    - up_transformer_proj_in
+    - up_transformer_proj_out
+  ipts:
+    dtype: sfp4_e2m1_all
+    zero_point: null
+    group_shapes:
+    - - 1
+      - 16
+      - 1
+    scale_dtypes:
+    - sfp8_e4m3_nan
+    static: false
+    enable_calib_range: false
+    skips:
+    - down_resblock_shortcut
+    - down_resblock_time_proj
+    - down_sample
+    - down_transformer_add_norm
+    - down_transformer_norm
+    - down_transformer_proj_in
+    - down_transformer_proj_out
+    - input_embed
+    - mid_resblock_shortcut
+    - mid_resblock_time_proj
+    - mid_transformer_add_norm
+    - mid_transformer_norm
+    - mid_transformer_proj_in
+    - mid_transformer_proj_out
+    - output_embed
+    - text_embed
+    - time_embed
+    - transformer_add_norm
+    - transformer_norm
+    - up_resblock_shortcut
+    - up_resblock_time_proj
+    - up_sample
+    - up_transformer_add_norm
+    - up_transformer_norm
+    - up_transformer_proj_in
+    - up_transformer_proj_out
+    allow_unsigned: false
+  opts:
+    dtype: null
+    zero_point: null
+    group_shapes:
+    - - -1
+      - -1
+      - -1
+    scale_dtypes:
+    - null
+    static: false
+    enable_calib_range: false
+    skips: []
+    allow_unsigned: false
+  enable_extra_wgts: true
+  extra_wgts:
+    dtype: sint4
+    zero_point: null
+    group_shapes:
+    - - 1
+      - 64
+      - 1
+    scale_dtypes:
+    - null
+    includes:
+    - down_transformer_add_norm
+    - down_transformer_norm
+    - mid_transformer_add_norm
+    - mid_transformer_norm
+    - transformer_add_norm
+    - transformer_norm
+    - up_transformer_add_norm
+    - up_transformer_norm
+  calib:
+    data: qdiff
+    num_samples: 128
+    batch_size: 16
+    path: /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/datasets/torch.bfloat16/flux.1-schnell/fmeuler4-g0/qdiff/s128
+    num_workers: 8
+  enable_rotation: false
+  enable_smooth: true
+  smooth:
+    enable_proj: true
+    proj:
+      degree: 2
+      objective: OutputsError
+      strategy: GridSearch
+      granularity: Layer
+      element_batch_size: -1
+      sample_batch_size: 32
+      element_size: -1
+      sample_size: -1
+      pre_reshape: true
+      outputs_device: cpu
+      fuse_when_possible: false
+      allow_a_quant: true
+      allow_b_quant: true
+      spans:
+      - - AbsMax
+        - AbsMax
+      alpha: 0.5
+      beta: -2
+      num_grids: 20
+      allow_low_rank: true
+      skips:
+      - down_resblock_conv
+      - down_transformer_add_norm
+      - down_transformer_norm
+      - mid_resblock_conv
+      - mid_transformer_add_norm
+      - mid_transformer_norm
+      - transformer_add_norm
+      - transformer_norm
+      - up_resblock_conv
+      - up_transformer_add_norm
+      - up_transformer_norm
+    enable_attn: false
+  develop_dtype: torch.float32
+enable_text: false
+text_cache:
+  root: ''
+  path:
+    rotation: ''
+    reorder: ''
+    smooth: ''
+    wgts: ''
+    acts: ''
+seed: 12345
+skip_gen: false
+skip_eval: false
+load_from: ''
+save_model: 'true'
+copy_on_save: false

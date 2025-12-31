@@ -1,0 +1,405 @@
+25-12-30 10:17:29 | I | === Configurations ===
+25-12-30 10:17:29 | I | DiffusionPtqRunConfig(
+25-12-30 10:17:29 | I |   cache=DiffusionPtqCacheConfig(
+25-12-30 10:17:29 | I |     root=runs,
+25-12-30 10:17:29 | I |     dirpath=None,
+25-12-30 10:17:29 | I |     path=None),
+25-12-30 10:17:29 | I |   output=OutputConfig(
+25-12-30 10:17:29 | I |     root=runs,
+25-12-30 10:17:29 | I |     dirname=reference,
+25-12-30 10:17:29 | I |     job=run-1024,
+25-12-30 10:17:29 | I |     dirpath=/cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0,
+25-12-30 10:17:29 | I |     timestamp=251230.101729),
+25-12-30 10:17:29 | I |   pipeline=DiffusionPipelineConfig(
+25-12-30 10:17:29 | I |     name=flux.1-schnell,
+25-12-30 10:17:29 | I |     path=,
+25-12-30 10:17:29 | I |     dtype=torch.bfloat16,
+25-12-30 10:17:29 | I |     device=cuda,
+25-12-30 10:17:29 | I |     shift_activations=False,
+25-12-30 10:17:29 | I |     lora=None,
+25-12-30 10:17:29 | I |     family=flux.1,
+25-12-30 10:17:29 | I |     task=text-to-image),
+25-12-30 10:17:29 | I |   eval=DiffusionEvalConfig(
+25-12-30 10:17:29 | I |     protocol=fmeuler4-g0,
+25-12-30 10:17:29 | I |     num_gpus=1,
+25-12-30 10:17:29 | I |     batch_size=1,
+25-12-30 10:17:29 | I |     batch_size_per_gpu=1,
+25-12-30 10:17:29 | I |     height=None,
+25-12-30 10:17:29 | I |     width=None,
+25-12-30 10:17:29 | I |     clean_caption=None,
+25-12-30 10:17:29 | I |     num_steps=4,
+25-12-30 10:17:29 | I |     guidance_scale=0,
+25-12-30 10:17:29 | I |     num_samples=1024,
+25-12-30 10:17:29 | I |     benchmarks=['DCI'],
+25-12-30 10:17:29 | I |     gt_metrics=['clip_iqa', 'clip_score', 'image_reward', 'fid'],
+25-12-30 10:17:29 | I |     ref_metrics=['psnr', 'lpips', 'ssim', 'fid'],
+25-12-30 10:17:29 | I |     gen_root={output},
+25-12-30 10:17:29 | I |     ref_root=,
+25-12-30 10:17:29 | I |     gt_stats_root=benchmarks/stats,
+25-12-30 10:17:29 | I |     control_root=benchmarks,
+25-12-30 10:17:29 | I |     chunk_start=0,
+25-12-30 10:17:29 | I |     chunk_step=1,
+25-12-30 10:17:29 | I |     chunk_only=False),
+25-12-30 10:17:29 | I |   quant=DiffusionQuantConfig(
+25-12-30 10:17:29 | I |     wgts=DiffusionWeightQuantizerConfig(
+25-12-30 10:17:29 | I |       dtype=None,
+25-12-30 10:17:29 | I |       zero_point=None,
+25-12-30 10:17:29 | I |       group_shapes=((-1, -1, -1),),
+25-12-30 10:17:29 | I |       scale_dtypes=(None,),
+25-12-30 10:17:29 | I |       static=False,
+25-12-30 10:17:29 | I |       kernel_gptq=None,
+25-12-30 10:17:29 | I |       low_rank=None,
+25-12-30 10:17:29 | I |       calib_range=None,
+25-12-30 10:17:29 | I |       skips=[]),
+25-12-30 10:17:29 | I |     ipts=DiffusionActivationQuantizerConfig(
+25-12-30 10:17:29 | I |       dtype=None,
+25-12-30 10:17:29 | I |       zero_point=None,
+25-12-30 10:17:29 | I |       group_shapes=((-1, -1, -1),),
+25-12-30 10:17:29 | I |       scale_dtypes=(None,),
+25-12-30 10:17:29 | I |       static=False,
+25-12-30 10:17:29 | I |       kernel_gptq=None,
+25-12-30 10:17:29 | I |       low_rank=None,
+25-12-30 10:17:29 | I |       calib_range=None,
+25-12-30 10:17:29 | I |       skips=[],
+25-12-30 10:17:29 | I |       allow_unsigned=False),
+25-12-30 10:17:29 | I |     opts=DiffusionActivationQuantizerConfig(
+25-12-30 10:17:29 | I |       dtype=None,
+25-12-30 10:17:29 | I |       zero_point=None,
+25-12-30 10:17:29 | I |       group_shapes=((-1, -1, -1),),
+25-12-30 10:17:29 | I |       scale_dtypes=(None,),
+25-12-30 10:17:29 | I |       static=False,
+25-12-30 10:17:29 | I |       kernel_gptq=None,
+25-12-30 10:17:29 | I |       low_rank=None,
+25-12-30 10:17:29 | I |       calib_range=None,
+25-12-30 10:17:29 | I |       skips=[],
+25-12-30 10:17:29 | I |       allow_unsigned=False),
+25-12-30 10:17:29 | I |     extra_wgts=None,
+25-12-30 10:17:29 | I |     unsigned_ipts=DiffusionActivationQuantizerConfig(
+25-12-30 10:17:29 | I |       dtype=None,
+25-12-30 10:17:29 | I |       zero_point=None,
+25-12-30 10:17:29 | I |       group_shapes=((-1, -1, -1),),
+25-12-30 10:17:29 | I |       scale_dtypes=(None,),
+25-12-30 10:17:29 | I |       static=False,
+25-12-30 10:17:29 | I |       kernel_gptq=None,
+25-12-30 10:17:29 | I |       low_rank=None,
+25-12-30 10:17:29 | I |       calib_range=None,
+25-12-30 10:17:29 | I |       skips=[],
+25-12-30 10:17:29 | I |       allow_unsigned=False),
+25-12-30 10:17:29 | I |     calib=DiffusionCalibCacheLoaderConfig(
+25-12-30 10:17:29 | I |       data=qdiff,
+25-12-30 10:17:29 | I |       num_samples=128,
+25-12-30 10:17:29 | I |       batch_size=16,
+25-12-30 10:17:29 | I |       path=/cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/datasets/torch.bfloat16/flux.1-schnell/fmeuler4-g0/qdiff/s128,
+25-12-30 10:17:29 | I |       num_workers=8),
+25-12-30 10:17:29 | I |     rotation=None,
+25-12-30 10:17:29 | I |     smooth=None,
+25-12-30 10:17:29 | I |     develop_dtype=torch.float32),
+25-12-30 10:17:29 | I |   text=None,
+25-12-30 10:17:29 | I |   text_cache=LlmCacheConfig(
+25-12-30 10:17:29 | I |     root=,
+25-12-30 10:17:29 | I |     dirpath=LlmQuantCacheConfig(
+25-12-30 10:17:29 | I |       rotation=,
+25-12-30 10:17:29 | I |       reorder=,
+25-12-30 10:17:29 | I |       smooth=,
+25-12-30 10:17:29 | I |       wgts=,
+25-12-30 10:17:29 | I |       acts=),
+25-12-30 10:17:29 | I |     path=LlmQuantCacheConfig(
+25-12-30 10:17:29 | I |       rotation=,
+25-12-30 10:17:29 | I |       reorder=,
+25-12-30 10:17:29 | I |       smooth=,
+25-12-30 10:17:29 | I |       wgts=,
+25-12-30 10:17:29 | I |       acts=)),
+25-12-30 10:17:29 | I |   seed=12345,
+25-12-30 10:17:29 | I |   skip_gen=False,
+25-12-30 10:17:29 | I |   skip_eval=False,
+25-12-30 10:17:29 | I |   load_from=,
+25-12-30 10:17:29 | I |   save_model=,
+25-12-30 10:17:29 | I |   copy_on_save=False)
+25-12-30 10:17:29 | I | === Dumped Configurations ===
+25-12-30 10:17:29 | I | { 'cache': {'root': 'runs'},
+25-12-30 10:17:29 | I |   'copy_on_save': False,
+25-12-30 10:17:29 | I |   'enable_cache': True,
+25-12-30 10:17:29 | I |   'enable_text': False,
+25-12-30 10:17:29 | I |   'eval': { 'batch_size': 1,
+25-12-30 10:17:29 | I |             'batch_size_per_gpu': 1,
+25-12-30 10:17:29 | I |             'benchmarks': ['DCI'],
+25-12-30 10:17:29 | I |             'chunk_only': False,
+25-12-30 10:17:29 | I |             'chunk_start': 0,
+25-12-30 10:17:29 | I |             'chunk_step': 1,
+25-12-30 10:17:29 | I |             'clean_caption': None,
+25-12-30 10:17:29 | I |             'control_root': 'benchmarks',
+25-12-30 10:17:29 | I |             'gen_root': '{output}',
+25-12-30 10:17:29 | I |             'gt_metrics': ['clip_iqa', 'clip_score', 'image_reward', 'fid'],
+25-12-30 10:17:29 | I |             'gt_stats_root': 'benchmarks/stats',
+25-12-30 10:17:29 | I |             'guidance_scale': 0,
+25-12-30 10:17:29 | I |             'height': None,
+25-12-30 10:17:29 | I |             'num_gpus': 1,
+25-12-30 10:17:29 | I |             'num_samples': 1024,
+25-12-30 10:17:29 | I |             'num_steps': 4,
+25-12-30 10:17:29 | I |             'protocol': 'fmeuler4-g0',
+25-12-30 10:17:29 | I |             'ref_metrics': ['psnr', 'lpips', 'ssim', 'fid'],
+25-12-30 10:17:29 | I |             'ref_root': '',
+25-12-30 10:17:29 | I |             'width': None},
+25-12-30 10:17:29 | I |   'load_from': '',
+25-12-30 10:17:29 | I |   'output': {'dirname': 'reference', 'job': 'run-1024', 'root': 'runs'},
+25-12-30 10:17:29 | I |   'pipeline': { 'device': 'cuda',
+25-12-30 10:17:29 | I |                 'dtype': 'torch.bfloat16',
+25-12-30 10:17:29 | I |                 'enable_lora': False,
+25-12-30 10:17:29 | I |                 'name': 'flux.1-schnell',
+25-12-30 10:17:29 | I |                 'path': '',
+25-12-30 10:17:29 | I |                 'shift_activations': False,
+25-12-30 10:17:29 | I |                 'task': 'text-to-image'},
+25-12-30 10:17:29 | I |   'quant': { 'calib': { 'batch_size': 16,
+25-12-30 10:17:29 | I |                         'data': 'qdiff',
+25-12-30 10:17:29 | I |                         'num_samples': 128,
+25-12-30 10:17:29 | I |                         'num_workers': 8,
+25-12-30 10:17:29 | I |                         'path': '/cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/datasets/torch.bfloat16/flux.1-schnell/fmeuler4-g0/qdiff/s128'},
+25-12-30 10:17:29 | I |              'develop_dtype': 'torch.float32',
+25-12-30 10:17:29 | I |              'enable_extra_wgts': False,
+25-12-30 10:17:29 | I |              'enable_rotation': False,
+25-12-30 10:17:29 | I |              'enable_smooth': False,
+25-12-30 10:17:29 | I |              'ipts': { 'allow_unsigned': False,
+25-12-30 10:17:29 | I |                        'dtype': None,
+25-12-30 10:17:29 | I |                        'enable_calib_range': False,
+25-12-30 10:17:29 | I |                        'group_shapes': [[-1, -1, -1]],
+25-12-30 10:17:29 | I |                        'scale_dtypes': [None],
+25-12-30 10:17:29 | I |                        'skips': [],
+25-12-30 10:17:29 | I |                        'static': False,
+25-12-30 10:17:29 | I |                        'zero_point': None},
+25-12-30 10:17:29 | I |              'opts': { 'allow_unsigned': False,
+25-12-30 10:17:29 | I |                        'dtype': None,
+25-12-30 10:17:29 | I |                        'enable_calib_range': False,
+25-12-30 10:17:29 | I |                        'group_shapes': [[-1, -1, -1]],
+25-12-30 10:17:29 | I |                        'scale_dtypes': [None],
+25-12-30 10:17:29 | I |                        'skips': [],
+25-12-30 10:17:29 | I |                        'static': False,
+25-12-30 10:17:29 | I |                        'zero_point': None},
+25-12-30 10:17:29 | I |              'wgts': { 'dtype': None,
+25-12-30 10:17:29 | I |                        'enable_calib_range': False,
+25-12-30 10:17:29 | I |                        'enable_kernel_gptq': False,
+25-12-30 10:17:29 | I |                        'enable_low_rank': False,
+25-12-30 10:17:29 | I |                        'group_shapes': [[-1, -1, -1]],
+25-12-30 10:17:29 | I |                        'scale_dtypes': [None],
+25-12-30 10:17:29 | I |                        'skips': [],
+25-12-30 10:17:29 | I |                        'zero_point': None}},
+25-12-30 10:17:29 | I |   'save_model': '',
+25-12-30 10:17:29 | I |   'seed': 12345,
+25-12-30 10:17:29 | I |   'skip_eval': False,
+25-12-30 10:17:29 | I |   'skip_gen': False,
+25-12-30 10:17:29 | I |   'text_cache': {'path': {'acts': '', 'reorder': '', 'rotation': '', 'smooth': '', 'wgts': ''}, 'root': ''}}
+25-12-30 10:17:29 | I | === Output Directory ===
+25-12-30 10:17:29 | I | /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0/run-1024-251230.101729
+25-12-30 10:17:29 | I | === Start Evaluating ===
+25-12-30 10:17:29 | I | * Building diffusion model pipeline
+25-12-30 10:17:29 | D |   Starting new HTTPS connection (1): hf-mirror.com:443
+25-12-30 10:17:31 | D |   https://hf-mirror.com:443 "HEAD /black-forest-labs/FLUX.1-schnell/resolve/main/model_index.json HTTP/1.1" 200 0
+25-12-30 10:17:31 | D |   https://hf-mirror.com:443 "GET /api/models/black-forest-labs/FLUX.1-schnell HTTP/1.1" 200 2168
+25-12-30 10:17:32 | D |   https://hf-mirror.com:443 "HEAD /black-forest-labs/FLUX.1-schnell/resolve/main/model_index.json HTTP/1.1" 200 0
+25-12-30 10:17:54 | I |   Replacing fused Linear with ConcatLinear.
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.0 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.1 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.2 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.3 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.4 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.5 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.6 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.7 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.8 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.9 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.10 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.11 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.12 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.13 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.14 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.15 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.16 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.17 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.18 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.19 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.20 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.21 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.22 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.23 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.24 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.25 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.26 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.27 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.28 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.29 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.30 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.31 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.32 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.33 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.34 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.35 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.36 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I |     + Replacing fused Linear in single_transformer_blocks.37 with ConcatLinear.
+25-12-30 10:17:54 | I |       - in_features = 3072/15360
+25-12-30 10:17:54 | I |       - out_features = 3072
+25-12-30 10:17:54 | I | * Evaluating model 
+25-12-30 10:17:54 | D |   Attempting to acquire lock 140261861131520 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 10:17:54 | D |   Lock 140261861131520 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 10:17:54 | D |   Attempting to release lock 140261861131520 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 10:17:54 | D |   Lock 140261861131520 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 10:17:54 | D |   Attempting to acquire lock 140261861639760 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-7d12c30b2f72690f_0.0.0_9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.lock
+25-12-30 10:17:54 | D |   Lock 140261861639760 acquired on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-7d12c30b2f72690f_0.0.0_9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.lock
+25-12-30 10:17:54 | D |   Attempting to release lock 140261861639760 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-7d12c30b2f72690f_0.0.0_9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.lock
+25-12-30 10:17:54 | D |   Lock 140261861639760 released on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-7d12c30b2f72690f_0.0.0_9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.lock
+25-12-30 10:17:54 | D |   Attempting to acquire lock 140261859147504 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 10:17:54 | D |   Lock 140261859147504 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 10:17:54 | D |   Attempting to release lock 140261859147504 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 10:17:54 | D |   Lock 140261859147504 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 10:17:54 | D |   Attempting to acquire lock 140261861225824 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af_builder.lock
+25-12-30 10:17:54 | D |   Lock 140261861225824 acquired on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af_builder.lock
+25-12-30 10:17:55 | D |   https://hf-mirror.com:443 "GET /api/datasets/mit-han-lab/svdquant-datasets/revision/main HTTP/1.1" 200 1035
+25-12-30 10:17:55 | D |   https://hf-mirror.com:443 "HEAD /datasets/mit-han-lab/svdquant-datasets/resolve/main/sDCI.yaml HTTP/1.1" 307 0
+25-12-30 10:17:55 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/datasets/mit-han-lab/svdquant-datasets/bb60f56cc7d311ea37fbfbf29c5c310725328d31/sDCI.yaml HTTP/1.1" 200 0
+25-12-30 10:17:56 | D |   https://hf-mirror.com:443 "HEAD /datasets/mit-han-lab/svdquant-datasets/resolve/main/sDCI.gz HTTP/1.1" 302 0
+25-12-30 10:17:56 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete/dci-train-00000-00000-of-NNNNN.arrow
+25-12-30 10:17:57 | D |   Attempting to acquire lock 140261861496432 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete_info.lock
+25-12-30 10:17:57 | D |   Lock 140261861496432 acquired on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete_info.lock
+25-12-30 10:17:57 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete/dataset_info.json
+25-12-30 10:17:57 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete/LICENSE
+25-12-30 10:17:57 | D |   Attempting to release lock 140261861496432 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete_info.lock
+25-12-30 10:17:57 | D |   Lock 140261861496432 released on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete_info.lock
+25-12-30 10:17:57 | D |   Attempting to release lock 140261861225824 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af_builder.lock
+25-12-30 10:17:57 | D |   Lock 140261861225824 released on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-7d12c30b2f72690f/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af_builder.lock
+25-12-30 10:17:57 | I |     sDCI has 1024 samples (chunk_start=0, chunk_step=1, unchunk_size=1024)
+25-12-30 11:02:46 | D |   Attempting to acquire lock 140261824146240 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 11:02:46 | D |   Lock 140261824146240 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 11:02:46 | D |   Attempting to release lock 140261824146240 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 11:02:46 | D |   Lock 140261824146240 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 11:02:46 | D |   Attempting to acquire lock 140261823989904 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-68d8c979dbde77b1_0.0.0_9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.lock
+25-12-30 11:02:46 | D |   Lock 140261823989904 acquired on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-68d8c979dbde77b1_0.0.0_9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.lock
+25-12-30 11:02:46 | D |   Attempting to release lock 140261823989904 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-68d8c979dbde77b1_0.0.0_9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.lock
+25-12-30 11:02:46 | D |   Lock 140261823989904 released on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-68d8c979dbde77b1_0.0.0_9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.lock
+25-12-30 11:02:46 | D |   Attempting to acquire lock 140261823786656 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 11:02:46 | D |   Lock 140261823786656 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 11:02:46 | D |   Attempting to release lock 140261823786656 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 11:02:46 | D |   Lock 140261823786656 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-30 11:02:46 | D |   Attempting to acquire lock 140261823989712 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af_builder.lock
+25-12-30 11:02:46 | D |   Lock 140261823989712 acquired on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af_builder.lock
+25-12-30 11:02:46 | D |   Resetting dropped connection: hf-mirror.com
+25-12-30 11:02:47 | D |   https://hf-mirror.com:443 "HEAD /datasets/mit-han-lab/svdquant-datasets/resolve/main/sDCI.yaml HTTP/1.1" 307 0
+25-12-30 11:02:47 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/datasets/mit-han-lab/svdquant-datasets/bb60f56cc7d311ea37fbfbf29c5c310725328d31/sDCI.yaml HTTP/1.1" 200 0
+25-12-30 11:02:48 | D |   https://hf-mirror.com:443 "HEAD /datasets/mit-han-lab/svdquant-datasets/resolve/main/sDCI.gz HTTP/1.1" 302 0
+25-12-30 11:02:48 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete/dci-train-00000-00000-of-NNNNN.arrow
+25-12-30 11:02:49 | D |   Attempting to acquire lock 140261823637472 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete_info.lock
+25-12-30 11:02:49 | D |   Lock 140261823637472 acquired on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete_info.lock
+25-12-30 11:02:49 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete/dataset_info.json
+25-12-30 11:02:49 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete/LICENSE
+25-12-30 11:02:49 | D |   Attempting to release lock 140261823637472 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete_info.lock
+25-12-30 11:02:49 | D |   Lock 140261823637472 released on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af.incomplete_info.lock
+25-12-30 11:02:49 | D |   Attempting to release lock 140261823989712 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af_builder.lock
+25-12-30 11:02:49 | D |   Lock 140261823989712 released on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-68d8c979dbde77b1/0.0.0/9e04349f13893c20340ed6645814659e88e9e857e3f3b59059e920b452f253af_builder.lock
+25-12-30 11:02:49 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-30 11:02:49 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-30 11:02:50 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-30 11:02:50 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-30 11:02:51 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/preprocessor_config.json HTTP/1.1" 307 0
+25-12-30 11:02:51 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/preprocessor_config.json HTTP/1.1" 200 0
+25-12-30 11:02:52 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+25-12-30 11:02:52 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/tokenizer_config.json HTTP/1.1" 200 0
+25-12-30 11:02:52 | D |   https://hf-mirror.com:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+25-12-30 11:02:52 | D |   https://hf-mirror.com:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+25-12-30 11:02:53 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/processor_config.json HTTP/1.1" 404 0
+25-12-30 11:02:53 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.json HTTP/1.1" 404 0
+25-12-30 11:02:53 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+25-12-30 11:02:54 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/audio_tokenizer_config.json HTTP/1.1" 404 0
+25-12-30 11:02:56 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-30 11:02:56 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-30 11:02:56 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-30 11:02:56 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-30 11:02:56 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/preprocessor_config.json HTTP/1.1" 307 0
+25-12-30 11:02:57 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/preprocessor_config.json HTTP/1.1" 200 0
+25-12-30 11:02:57 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+25-12-30 11:02:57 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/tokenizer_config.json HTTP/1.1" 200 0
+25-12-30 11:02:57 | D |   https://hf-mirror.com:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+25-12-30 11:02:58 | D |   https://hf-mirror.com:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+25-12-30 11:02:58 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/processor_config.json HTTP/1.1" 404 0
+25-12-30 11:02:59 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.json HTTP/1.1" 404 0
+25-12-30 11:02:59 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+25-12-30 11:02:59 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/audio_tokenizer_config.json HTTP/1.1" 404 0
+25-12-30 11:05:38 | W |   '(ReadTimeoutError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Read timed out. (read timeout=10)"), '(Request ID: 21747cce-caab-4b90-b414-42865b26b659)')' thrown while requesting HEAD https://hf-mirror.com/THUDM/ImageReward/resolve/main/ImageReward.pt
+25-12-30 11:05:38 | W |   Retrying in 1s [Retry 1/5].
+25-12-30 11:05:50 | W |   '(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /THUDM/ImageReward/resolve/main/ImageReward.pt (Caused by ConnectTimeoutError(<HTTPSConnection(host='hf-mirror.com', port=443) at 0x7f928e805e80>, 'Connection to hf-mirror.com timed out. (connect timeout=10)'))"), '(Request ID: dbc208c5-1934-4d3f-b213-31e2b50345f2)')' thrown while requesting HEAD https://hf-mirror.com/THUDM/ImageReward/resolve/main/ImageReward.pt
+25-12-30 11:05:50 | W |   Retrying in 2s [Retry 2/5].
+25-12-30 11:06:02 | W |   '(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /THUDM/ImageReward/resolve/main/ImageReward.pt (Caused by ConnectTimeoutError(<HTTPSConnection(host='hf-mirror.com', port=443) at 0x7f9142412a50>, 'Connection to hf-mirror.com timed out. (connect timeout=10)'))"), '(Request ID: 589ae421-9f43-43fc-8ff2-551591b050cc)')' thrown while requesting HEAD https://hf-mirror.com/THUDM/ImageReward/resolve/main/ImageReward.pt
+25-12-30 11:06:02 | W |   Retrying in 4s [Retry 3/5].
+25-12-30 11:06:06 | W |   '(MaxRetryError('HTTPSConnectionPool(host=\'hf-mirror.com\', port=443): Max retries exceeded with url: /THUDM/ImageReward/resolve/main/ImageReward.pt (Caused by NewConnectionError("HTTPSConnection(host=\'hf-mirror.com\', port=443): Failed to establish a new connection: [Errno 111] Connection refused"))'), '(Request ID: 7f7285ec-a6d4-462c-b044-7522c79df674)')' thrown while requesting HEAD https://hf-mirror.com/THUDM/ImageReward/resolve/main/ImageReward.pt
+25-12-30 11:06:06 | W |   Retrying in 8s [Retry 4/5].
+25-12-30 11:10:48 | I | * Saving results to /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0/run-1024-251230.101729

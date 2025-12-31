@@ -1,0 +1,512 @@
+25-12-24 10:43:55 | I | === Configurations ===
+25-12-24 10:43:55 | I | DiffusionPtqRunConfig(
+25-12-24 10:43:55 | I |   cache=DiffusionPtqCacheConfig(
+25-12-24 10:43:55 | I |     root=runs,
+25-12-24 10:43:55 | I |     dirpath=None,
+25-12-24 10:43:55 | I |     path=None),
+25-12-24 10:43:55 | I |   output=OutputConfig(
+25-12-24 10:43:55 | I |     root=runs,
+25-12-24 10:43:55 | I |     dirname=reference,
+25-12-24 10:43:55 | I |     job=run-5000,
+25-12-24 10:43:55 | I |     dirpath=/cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0,
+25-12-24 10:43:55 | I |     timestamp=251224.104355),
+25-12-24 10:43:55 | I |   pipeline=DiffusionPipelineConfig(
+25-12-24 10:43:55 | I |     name=flux.1-schnell,
+25-12-24 10:43:55 | I |     path=,
+25-12-24 10:43:55 | I |     dtype=torch.bfloat16,
+25-12-24 10:43:55 | I |     device=cuda,
+25-12-24 10:43:55 | I |     shift_activations=False,
+25-12-24 10:43:55 | I |     lora=None,
+25-12-24 10:43:55 | I |     family=flux.1,
+25-12-24 10:43:55 | I |     task=text-to-image),
+25-12-24 10:43:55 | I |   eval=DiffusionEvalConfig(
+25-12-24 10:43:55 | I |     protocol=fmeuler4-g0,
+25-12-24 10:43:55 | I |     num_gpus=1,
+25-12-24 10:43:55 | I |     batch_size=1,
+25-12-24 10:43:55 | I |     batch_size_per_gpu=1,
+25-12-24 10:43:55 | I |     height=None,
+25-12-24 10:43:55 | I |     width=None,
+25-12-24 10:43:55 | I |     clean_caption=None,
+25-12-24 10:43:55 | I |     num_steps=4,
+25-12-24 10:43:55 | I |     guidance_scale=0,
+25-12-24 10:43:55 | I |     num_samples=5000,
+25-12-24 10:43:55 | I |     benchmarks=['MJHQ', 'DCI'],
+25-12-24 10:43:55 | I |     gt_metrics=['clip_iqa', 'clip_score', 'image_reward', 'fid'],
+25-12-24 10:43:55 | I |     ref_metrics=['psnr', 'lpips', 'ssim', 'fid'],
+25-12-24 10:43:55 | I |     gen_root={output},
+25-12-24 10:43:55 | I |     ref_root=,
+25-12-24 10:43:55 | I |     gt_stats_root=benchmarks/stats,
+25-12-24 10:43:55 | I |     control_root=benchmarks,
+25-12-24 10:43:55 | I |     chunk_start=0,
+25-12-24 10:43:55 | I |     chunk_step=1,
+25-12-24 10:43:55 | I |     chunk_only=False),
+25-12-24 10:43:55 | I |   quant=DiffusionQuantConfig(
+25-12-24 10:43:55 | I |     wgts=DiffusionWeightQuantizerConfig(
+25-12-24 10:43:55 | I |       dtype=None,
+25-12-24 10:43:55 | I |       zero_point=None,
+25-12-24 10:43:55 | I |       group_shapes=((-1, -1, -1),),
+25-12-24 10:43:55 | I |       scale_dtypes=(None,),
+25-12-24 10:43:55 | I |       static=False,
+25-12-24 10:43:55 | I |       kernel_gptq=None,
+25-12-24 10:43:55 | I |       low_rank=None,
+25-12-24 10:43:55 | I |       calib_range=None,
+25-12-24 10:43:55 | I |       skips=[]),
+25-12-24 10:43:55 | I |     ipts=DiffusionActivationQuantizerConfig(
+25-12-24 10:43:55 | I |       dtype=None,
+25-12-24 10:43:55 | I |       zero_point=None,
+25-12-24 10:43:55 | I |       group_shapes=((-1, -1, -1),),
+25-12-24 10:43:55 | I |       scale_dtypes=(None,),
+25-12-24 10:43:55 | I |       static=False,
+25-12-24 10:43:55 | I |       kernel_gptq=None,
+25-12-24 10:43:55 | I |       low_rank=None,
+25-12-24 10:43:55 | I |       calib_range=None,
+25-12-24 10:43:55 | I |       skips=[],
+25-12-24 10:43:55 | I |       allow_unsigned=False),
+25-12-24 10:43:55 | I |     opts=DiffusionActivationQuantizerConfig(
+25-12-24 10:43:55 | I |       dtype=None,
+25-12-24 10:43:55 | I |       zero_point=None,
+25-12-24 10:43:55 | I |       group_shapes=((-1, -1, -1),),
+25-12-24 10:43:55 | I |       scale_dtypes=(None,),
+25-12-24 10:43:55 | I |       static=False,
+25-12-24 10:43:55 | I |       kernel_gptq=None,
+25-12-24 10:43:55 | I |       low_rank=None,
+25-12-24 10:43:55 | I |       calib_range=None,
+25-12-24 10:43:55 | I |       skips=[],
+25-12-24 10:43:55 | I |       allow_unsigned=False),
+25-12-24 10:43:55 | I |     extra_wgts=None,
+25-12-24 10:43:55 | I |     unsigned_ipts=DiffusionActivationQuantizerConfig(
+25-12-24 10:43:55 | I |       dtype=None,
+25-12-24 10:43:55 | I |       zero_point=None,
+25-12-24 10:43:55 | I |       group_shapes=((-1, -1, -1),),
+25-12-24 10:43:55 | I |       scale_dtypes=(None,),
+25-12-24 10:43:55 | I |       static=False,
+25-12-24 10:43:55 | I |       kernel_gptq=None,
+25-12-24 10:43:55 | I |       low_rank=None,
+25-12-24 10:43:55 | I |       calib_range=None,
+25-12-24 10:43:55 | I |       skips=[],
+25-12-24 10:43:55 | I |       allow_unsigned=False),
+25-12-24 10:43:55 | I |     calib=DiffusionCalibCacheLoaderConfig(
+25-12-24 10:43:55 | I |       data=qdiff,
+25-12-24 10:43:55 | I |       num_samples=128,
+25-12-24 10:43:55 | I |       batch_size=16,
+25-12-24 10:43:55 | I |       path=/cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/datasets/torch.bfloat16/flux.1-schnell/fmeuler4-g0/qdiff/s128,
+25-12-24 10:43:55 | I |       num_workers=8),
+25-12-24 10:43:55 | I |     rotation=None,
+25-12-24 10:43:55 | I |     smooth=None,
+25-12-24 10:43:55 | I |     develop_dtype=torch.float32),
+25-12-24 10:43:55 | I |   text=None,
+25-12-24 10:43:55 | I |   text_cache=LlmCacheConfig(
+25-12-24 10:43:55 | I |     root=,
+25-12-24 10:43:55 | I |     dirpath=LlmQuantCacheConfig(
+25-12-24 10:43:55 | I |       rotation=,
+25-12-24 10:43:55 | I |       reorder=,
+25-12-24 10:43:55 | I |       smooth=,
+25-12-24 10:43:55 | I |       wgts=,
+25-12-24 10:43:55 | I |       acts=),
+25-12-24 10:43:55 | I |     path=LlmQuantCacheConfig(
+25-12-24 10:43:55 | I |       rotation=,
+25-12-24 10:43:55 | I |       reorder=,
+25-12-24 10:43:55 | I |       smooth=,
+25-12-24 10:43:55 | I |       wgts=,
+25-12-24 10:43:55 | I |       acts=)),
+25-12-24 10:43:55 | I |   seed=12345,
+25-12-24 10:43:55 | I |   skip_gen=False,
+25-12-24 10:43:55 | I |   skip_eval=False,
+25-12-24 10:43:55 | I |   load_from=,
+25-12-24 10:43:55 | I |   save_model=,
+25-12-24 10:43:55 | I |   copy_on_save=False)
+25-12-24 10:43:55 | I | === Dumped Configurations ===
+25-12-24 10:43:55 | I | { 'cache': {'root': 'runs'},
+25-12-24 10:43:55 | I |   'copy_on_save': False,
+25-12-24 10:43:55 | I |   'enable_cache': True,
+25-12-24 10:43:55 | I |   'enable_text': False,
+25-12-24 10:43:55 | I |   'eval': { 'batch_size': 1,
+25-12-24 10:43:55 | I |             'batch_size_per_gpu': 1,
+25-12-24 10:43:55 | I |             'benchmarks': ['MJHQ', 'DCI'],
+25-12-24 10:43:55 | I |             'chunk_only': False,
+25-12-24 10:43:55 | I |             'chunk_start': 0,
+25-12-24 10:43:55 | I |             'chunk_step': 1,
+25-12-24 10:43:55 | I |             'clean_caption': None,
+25-12-24 10:43:55 | I |             'control_root': 'benchmarks',
+25-12-24 10:43:55 | I |             'gen_root': '{output}',
+25-12-24 10:43:55 | I |             'gt_metrics': ['clip_iqa', 'clip_score', 'image_reward', 'fid'],
+25-12-24 10:43:55 | I |             'gt_stats_root': 'benchmarks/stats',
+25-12-24 10:43:55 | I |             'guidance_scale': 0,
+25-12-24 10:43:55 | I |             'height': None,
+25-12-24 10:43:55 | I |             'num_gpus': 1,
+25-12-24 10:43:55 | I |             'num_samples': 5000,
+25-12-24 10:43:55 | I |             'num_steps': 4,
+25-12-24 10:43:55 | I |             'protocol': 'fmeuler4-g0',
+25-12-24 10:43:55 | I |             'ref_metrics': ['psnr', 'lpips', 'ssim', 'fid'],
+25-12-24 10:43:55 | I |             'ref_root': '',
+25-12-24 10:43:55 | I |             'width': None},
+25-12-24 10:43:55 | I |   'load_from': '',
+25-12-24 10:43:55 | I |   'output': {'dirname': 'reference', 'job': 'run-5000', 'root': 'runs'},
+25-12-24 10:43:55 | I |   'pipeline': { 'device': 'cuda',
+25-12-24 10:43:55 | I |                 'dtype': 'torch.bfloat16',
+25-12-24 10:43:55 | I |                 'enable_lora': False,
+25-12-24 10:43:55 | I |                 'name': 'flux.1-schnell',
+25-12-24 10:43:55 | I |                 'path': '',
+25-12-24 10:43:55 | I |                 'shift_activations': False,
+25-12-24 10:43:55 | I |                 'task': 'text-to-image'},
+25-12-24 10:43:55 | I |   'quant': { 'calib': { 'batch_size': 16,
+25-12-24 10:43:55 | I |                         'data': 'qdiff',
+25-12-24 10:43:55 | I |                         'num_samples': 128,
+25-12-24 10:43:55 | I |                         'num_workers': 8,
+25-12-24 10:43:55 | I |                         'path': '/cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/datasets/torch.bfloat16/flux.1-schnell/fmeuler4-g0/qdiff/s128'},
+25-12-24 10:43:55 | I |              'develop_dtype': 'torch.float32',
+25-12-24 10:43:55 | I |              'enable_extra_wgts': False,
+25-12-24 10:43:55 | I |              'enable_rotation': False,
+25-12-24 10:43:55 | I |              'enable_smooth': False,
+25-12-24 10:43:55 | I |              'ipts': { 'allow_unsigned': False,
+25-12-24 10:43:55 | I |                        'dtype': None,
+25-12-24 10:43:55 | I |                        'enable_calib_range': False,
+25-12-24 10:43:55 | I |                        'group_shapes': [[-1, -1, -1]],
+25-12-24 10:43:55 | I |                        'scale_dtypes': [None],
+25-12-24 10:43:55 | I |                        'skips': [],
+25-12-24 10:43:55 | I |                        'static': False,
+25-12-24 10:43:55 | I |                        'zero_point': None},
+25-12-24 10:43:55 | I |              'opts': { 'allow_unsigned': False,
+25-12-24 10:43:55 | I |                        'dtype': None,
+25-12-24 10:43:55 | I |                        'enable_calib_range': False,
+25-12-24 10:43:55 | I |                        'group_shapes': [[-1, -1, -1]],
+25-12-24 10:43:55 | I |                        'scale_dtypes': [None],
+25-12-24 10:43:55 | I |                        'skips': [],
+25-12-24 10:43:55 | I |                        'static': False,
+25-12-24 10:43:55 | I |                        'zero_point': None},
+25-12-24 10:43:55 | I |              'wgts': { 'dtype': None,
+25-12-24 10:43:55 | I |                        'enable_calib_range': False,
+25-12-24 10:43:55 | I |                        'enable_kernel_gptq': False,
+25-12-24 10:43:55 | I |                        'enable_low_rank': False,
+25-12-24 10:43:55 | I |                        'group_shapes': [[-1, -1, -1]],
+25-12-24 10:43:55 | I |                        'scale_dtypes': [None],
+25-12-24 10:43:55 | I |                        'skips': [],
+25-12-24 10:43:55 | I |                        'zero_point': None}},
+25-12-24 10:43:55 | I |   'save_model': '',
+25-12-24 10:43:55 | I |   'seed': 12345,
+25-12-24 10:43:55 | I |   'skip_eval': False,
+25-12-24 10:43:55 | I |   'skip_gen': False,
+25-12-24 10:43:55 | I |   'text_cache': {'path': {'acts': '', 'reorder': '', 'rotation': '', 'smooth': '', 'wgts': ''}, 'root': ''}}
+25-12-24 10:43:55 | I | === Output Directory ===
+25-12-24 10:43:55 | I | /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0/run-5000-251224.104355
+25-12-24 10:43:55 | I | === Start Evaluating ===
+25-12-24 10:43:55 | I | * Building diffusion model pipeline
+25-12-24 10:43:55 | D |   Starting new HTTPS connection (1): huggingface.co:443
+25-12-24 10:43:57 | D |   https://huggingface.co:443 "HEAD /black-forest-labs/FLUX.1-schnell/resolve/main/model_index.json HTTP/1.1" 200 0
+25-12-24 10:43:57 | D |   https://huggingface.co:443 "GET /api/models/black-forest-labs/FLUX.1-schnell HTTP/1.1" 200 5108
+25-12-24 10:43:58 | D |   https://huggingface.co:443 "HEAD /black-forest-labs/FLUX.1-schnell/resolve/main/model_index.json HTTP/1.1" 200 0
+25-12-24 10:44:20 | I |   Replacing fused Linear with ConcatLinear.
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.0 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.1 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.2 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.3 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.4 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.5 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.6 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.7 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.8 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.9 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.10 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.11 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.12 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.13 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.14 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.15 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.16 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.17 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.18 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.19 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.20 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.21 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.22 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.23 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.24 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.25 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.26 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.27 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.28 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.29 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.30 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.31 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.32 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.33 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.34 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.35 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.36 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I |     + Replacing fused Linear in single_transformer_blocks.37 with ConcatLinear.
+25-12-24 10:44:20 | I |       - in_features = 3072/15360
+25-12-24 10:44:20 | I |       - out_features = 3072
+25-12-24 10:44:20 | I | * Evaluating model 
+25-12-24 10:44:20 | D |   Attempting to acquire lock 140183164220384 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 10:44:20 | D |   Lock 140183164220384 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 10:44:20 | D |   Attempting to release lock 140183164220384 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 10:44:20 | D |   Lock 140183164220384 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 10:44:20 | D |   Attempting to acquire lock 140183239951040 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-a9c372f820d485bc_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-24 10:44:20 | D |   Lock 140183239951040 acquired on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-a9c372f820d485bc_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-24 10:44:20 | D |   Attempting to release lock 140183239951040 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-a9c372f820d485bc_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-24 10:44:20 | D |   Lock 140183239951040 released on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-a9c372f820d485bc_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-24 10:44:20 | D |   Attempting to acquire lock 140183160995376 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 10:44:20 | D |   Lock 140183160995376 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 10:44:20 | D |   Attempting to release lock 140183160995376 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 10:44:20 | D |   Lock 140183160995376 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 10:44:20 | D |   Attempting to acquire lock 140183164476192 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-24 10:44:20 | D |   Lock 140183164476192 acquired on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-24 10:44:21 | D |   https://huggingface.co:443 "GET /api/datasets/playgroundai/MJHQ-30K/revision/main HTTP/1.1" 200 2940
+25-12-24 10:44:21 | D |   https://huggingface.co:443 "HEAD /datasets/playgroundai/MJHQ-30K/resolve/main/meta_data.json HTTP/1.1" 307 0
+25-12-24 10:44:22 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/datasets/playgroundai/MJHQ-30K/15b0a659e066e763d0e9a6cd8f00e25f8af5e084/meta_data.json HTTP/1.1" 200 0
+25-12-24 10:44:22 | D |   Attempting to acquire lock 140183257844528 on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--playgroundai--MJHQ-30K/8c8c27f4260c997b89a55dbef418de9db8dc96cd.lock
+25-12-24 10:44:22 | D |   Lock 140183257844528 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--playgroundai--MJHQ-30K/8c8c27f4260c997b89a55dbef418de9db8dc96cd.lock
+25-12-24 10:44:22 | D |   https://huggingface.co:443 "GET /api/resolve-cache/datasets/playgroundai/MJHQ-30K/15b0a659e066e763d0e9a6cd8f00e25f8af5e084/meta_data.json HTTP/1.1" 200 None
+25-12-24 10:44:23 | D |   Attempting to release lock 140183257844528 on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--playgroundai--MJHQ-30K/8c8c27f4260c997b89a55dbef418de9db8dc96cd.lock
+25-12-24 10:44:23 | D |   Lock 140183257844528 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--playgroundai--MJHQ-30K/8c8c27f4260c997b89a55dbef418de9db8dc96cd.lock
+25-12-24 10:44:23 | D |   https://huggingface.co:443 "HEAD /datasets/playgroundai/MJHQ-30K/resolve/main/mjhq30k_imgs.zip HTTP/1.1" 302 0
+25-12-24 10:44:23 | D |   Attempting to acquire lock 140183160798912 on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--playgroundai--MJHQ-30K/dacdc4328f294696ef0ee389be4bcf3fc96d112060ef10c13384836b54d4a8ec.lock
+25-12-24 10:44:23 | D |   Lock 140183160798912 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--playgroundai--MJHQ-30K/dacdc4328f294696ef0ee389be4bcf3fc96d112060ef10c13384836b54d4a8ec.lock
+25-12-24 10:44:24 | D |   https://huggingface.co:443 "GET /api/datasets/playgroundai/MJHQ-30K/xet-read-token/15b0a659e066e763d0e9a6cd8f00e25f8af5e084 HTTP/1.1" 200 417
+25-12-24 10:55:54 | D |   Attempting to release lock 140183160798912 on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--playgroundai--MJHQ-30K/dacdc4328f294696ef0ee389be4bcf3fc96d112060ef10c13384836b54d4a8ec.lock
+25-12-24 10:55:54 | D |   Lock 140183160798912 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--playgroundai--MJHQ-30K/dacdc4328f294696ef0ee389be4bcf3fc96d112060ef10c13384836b54d4a8ec.lock
+25-12-24 10:55:54 | D |   Attempting to acquire lock 140183164321872 on /home/jby_25113050052/.cache/huggingface/datasets/downloads/extracted/857fd8012dee6dd21bad6989c4bf4a7010369fdd61690413d58fcdbe6e2f16e1.lock
+25-12-24 10:55:54 | D |   Lock 140183164321872 acquired on /home/jby_25113050052/.cache/huggingface/datasets/downloads/extracted/857fd8012dee6dd21bad6989c4bf4a7010369fdd61690413d58fcdbe6e2f16e1.lock
+25-12-24 10:56:12 | D |   Attempting to release lock 140183164321872 on /home/jby_25113050052/.cache/huggingface/datasets/downloads/extracted/857fd8012dee6dd21bad6989c4bf4a7010369fdd61690413d58fcdbe6e2f16e1.lock
+25-12-24 10:56:12 | D |   Lock 140183164321872 released on /home/jby_25113050052/.cache/huggingface/datasets/downloads/extracted/857fd8012dee6dd21bad6989c4bf4a7010369fdd61690413d58fcdbe6e2f16e1.lock
+25-12-24 10:56:12 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete/mjhq-train-00000-00000-of-NNNNN.arrow
+25-12-24 10:56:13 | D |   Attempting to acquire lock 140183160995472 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete_info.lock
+25-12-24 10:56:13 | D |   Lock 140183160995472 acquired on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete_info.lock
+25-12-24 10:56:13 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete/dataset_info.json
+25-12-24 10:56:13 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete/LICENSE
+25-12-24 10:56:13 | D |   Attempting to release lock 140183160995472 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete_info.lock
+25-12-24 10:56:13 | D |   Lock 140183160995472 released on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete_info.lock
+25-12-24 10:56:13 | D |   Attempting to release lock 140183164476192 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-24 10:56:13 | D |   Lock 140183164476192 released on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a9c372f820d485bc/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-24 10:56:13 | I |     MJHQ has 5000 samples (chunk_start=0, chunk_step=1, unchunk_size=5000)
+25-12-24 14:32:40 | D |   Attempting to acquire lock 140183104222224 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Lock 140183104222224 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Attempting to release lock 140183104222224 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Lock 140183104222224 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Attempting to acquire lock 140183160790656 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Lock 140183160790656 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Attempting to release lock 140183160790656 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Lock 140183160790656 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Attempting to acquire lock 140182828532944 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-a9c372f820d485bc_0.0.0_153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.lock
+25-12-24 14:32:40 | D |   Lock 140182828532944 acquired on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-a9c372f820d485bc_0.0.0_153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.lock
+25-12-24 14:32:40 | D |   Attempting to release lock 140182828532944 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-a9c372f820d485bc_0.0.0_153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.lock
+25-12-24 14:32:40 | D |   Lock 140182828532944 released on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_dci_sDCI-a9c372f820d485bc_0.0.0_153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.lock
+25-12-24 14:32:40 | D |   Attempting to acquire lock 140182828168208 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Lock 140182828168208 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Attempting to release lock 140182828168208 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Lock 140182828168208 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/DCI.lock
+25-12-24 14:32:40 | D |   Attempting to acquire lock 140182828811760 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134_builder.lock
+25-12-24 14:32:40 | D |   Lock 140182828811760 acquired on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134_builder.lock
+25-12-24 14:32:40 | D |   Resetting dropped connection: huggingface.co
+25-12-24 14:32:41 | D |   https://huggingface.co:443 "GET /api/datasets/mit-han-lab/svdquant-datasets/revision/main HTTP/1.1" 200 1996
+25-12-24 14:32:41 | D |   https://huggingface.co:443 "HEAD /datasets/mit-han-lab/svdquant-datasets/resolve/main/sDCI.yaml HTTP/1.1" 307 0
+25-12-24 14:32:42 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/datasets/mit-han-lab/svdquant-datasets/bb60f56cc7d311ea37fbfbf29c5c310725328d31/sDCI.yaml HTTP/1.1" 200 0
+25-12-24 14:32:42 | D |   Attempting to acquire lock 140182828764144 on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--mit-han-lab--svdquant-datasets/f6faaea519786759688406d471b23d123f6c0d58.lock
+25-12-24 14:32:42 | D |   Lock 140182828764144 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--mit-han-lab--svdquant-datasets/f6faaea519786759688406d471b23d123f6c0d58.lock
+25-12-24 14:32:42 | D |   https://huggingface.co:443 "GET /api/resolve-cache/datasets/mit-han-lab/svdquant-datasets/bb60f56cc7d311ea37fbfbf29c5c310725328d31/sDCI.yaml HTTP/1.1" 200 None
+25-12-24 14:32:42 | D |   Attempting to release lock 140182828764144 on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--mit-han-lab--svdquant-datasets/f6faaea519786759688406d471b23d123f6c0d58.lock
+25-12-24 14:32:42 | D |   Lock 140182828764144 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--mit-han-lab--svdquant-datasets/f6faaea519786759688406d471b23d123f6c0d58.lock
+25-12-24 14:32:43 | D |   https://huggingface.co:443 "HEAD /datasets/mit-han-lab/svdquant-datasets/resolve/main/sDCI.gz HTTP/1.1" 302 0
+25-12-24 14:32:43 | D |   Attempting to acquire lock 140183159941760 on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--mit-han-lab--svdquant-datasets/5fdd8af19232777bb10fe6183f484f4b24e8985083c0dd68c1cf494937f9645f.lock
+25-12-24 14:32:43 | D |   Lock 140183159941760 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--mit-han-lab--svdquant-datasets/5fdd8af19232777bb10fe6183f484f4b24e8985083c0dd68c1cf494937f9645f.lock
+25-12-24 14:32:43 | D |   https://huggingface.co:443 "GET /api/datasets/mit-han-lab/svdquant-datasets/xet-read-token/bb60f56cc7d311ea37fbfbf29c5c310725328d31 HTTP/1.1" 200 417
+25-12-24 14:53:28 | D |   Starting new HTTPS connection (1): huggingface.co:443
+25-12-24 14:53:32 | D |   https://huggingface.co:443 "GET /api/datasets/mit-han-lab/svdquant-datasets/xet-read-token/bb60f56cc7d311ea37fbfbf29c5c310725328d31 HTTP/1.1" 200 417
+25-12-24 15:10:07 | D |   Attempting to release lock 140183159941760 on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--mit-han-lab--svdquant-datasets/5fdd8af19232777bb10fe6183f484f4b24e8985083c0dd68c1cf494937f9645f.lock
+25-12-24 15:10:07 | D |   Lock 140183159941760 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/datasets--mit-han-lab--svdquant-datasets/5fdd8af19232777bb10fe6183f484f4b24e8985083c0dd68c1cf494937f9645f.lock
+25-12-24 15:10:07 | D |   Attempting to acquire lock 140182828228848 on /home/jby_25113050052/.cache/huggingface/datasets/downloads/extracted/dbe1907e94e53ce188452180bfe2901da072ebcc425824e697b0df78a7b97426.lock
+25-12-24 15:10:07 | D |   Lock 140182828228848 acquired on /home/jby_25113050052/.cache/huggingface/datasets/downloads/extracted/dbe1907e94e53ce188452180bfe2901da072ebcc425824e697b0df78a7b97426.lock
+25-12-24 15:10:59 | D |   Attempting to release lock 140182828228848 on /home/jby_25113050052/.cache/huggingface/datasets/downloads/extracted/dbe1907e94e53ce188452180bfe2901da072ebcc425824e697b0df78a7b97426.lock
+25-12-24 15:10:59 | D |   Lock 140182828228848 released on /home/jby_25113050052/.cache/huggingface/datasets/downloads/extracted/dbe1907e94e53ce188452180bfe2901da072ebcc425824e697b0df78a7b97426.lock
+25-12-24 15:10:59 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.incomplete/dci-train-00000-00000-of-NNNNN.arrow
+25-12-24 15:11:00 | D |   Attempting to acquire lock 140182827935472 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.incomplete_info.lock
+25-12-24 15:11:00 | D |   Lock 140182827935472 acquired on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.incomplete_info.lock
+25-12-24 15:11:00 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.incomplete/dataset_info.json
+25-12-24 15:11:00 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.incomplete/LICENSE
+25-12-24 15:11:00 | D |   Attempting to release lock 140182827935472 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.incomplete_info.lock
+25-12-24 15:11:00 | D |   Lock 140182827935472 released on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134.incomplete_info.lock
+25-12-24 15:11:00 | D |   Attempting to release lock 140182828811760 on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134_builder.lock
+25-12-24 15:11:00 | D |   Lock 140182828811760 released on /home/jby_25113050052/.cache/huggingface/datasets/dci/sDCI-a9c372f820d485bc/0.0.0/153f51b531407e865a767d1b9c27add0e45598e0dd79f7cabfe3926a7b6d5134_builder.lock
+25-12-24 15:11:00 | I |     sDCI has 5000 samples (chunk_start=0, chunk_step=1, unchunk_size=5000)
+25-12-24 18:47:40 | D |   Attempting to acquire lock 140183243093008 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 18:47:40 | D |   Lock 140183243093008 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 18:47:40 | D |   Attempting to release lock 140183243093008 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 18:47:40 | D |   Lock 140183243093008 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 18:47:40 | D |   Attempting to acquire lock 140182828612400 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-a509cfa7a40c99b1_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-24 18:47:40 | D |   Lock 140182828612400 acquired on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-a509cfa7a40c99b1_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-24 18:47:40 | D |   Attempting to release lock 140182828612400 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-a509cfa7a40c99b1_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-24 18:47:40 | D |   Lock 140182828612400 released on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-a509cfa7a40c99b1_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-24 18:47:40 | D |   Attempting to acquire lock 140183104217904 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 18:47:40 | D |   Lock 140183104217904 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 18:47:40 | D |   Attempting to release lock 140183104217904 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 18:47:40 | D |   Lock 140183104217904 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-24 18:47:40 | D |   Attempting to acquire lock 140183159932208 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-24 18:47:40 | D |   Lock 140183159932208 acquired on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-24 18:47:40 | D |   Resetting dropped connection: huggingface.co
+25-12-24 18:47:41 | D |   https://huggingface.co:443 "HEAD /datasets/playgroundai/MJHQ-30K/resolve/main/meta_data.json HTTP/1.1" 307 0
+25-12-24 18:47:41 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/datasets/playgroundai/MJHQ-30K/15b0a659e066e763d0e9a6cd8f00e25f8af5e084/meta_data.json HTTP/1.1" 200 0
+25-12-24 18:47:42 | D |   https://huggingface.co:443 "HEAD /datasets/playgroundai/MJHQ-30K/resolve/main/mjhq30k_imgs.zip HTTP/1.1" 302 0
+25-12-24 18:47:42 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete/mjhq-train-00000-00000-of-NNNNN.arrow
+25-12-24 18:47:43 | D |   Attempting to acquire lock 140183161593424 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete_info.lock
+25-12-24 18:47:43 | D |   Lock 140183161593424 acquired on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete_info.lock
+25-12-24 18:47:43 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete/dataset_info.json
+25-12-24 18:47:43 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete/LICENSE
+25-12-24 18:47:43 | D |   Attempting to release lock 140183161593424 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete_info.lock
+25-12-24 18:47:43 | D |   Lock 140183161593424 released on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.incomplete_info.lock
+25-12-24 18:47:43 | D |   Attempting to release lock 140183159932208 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-24 18:47:43 | D |   Lock 140183159932208 released on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-a509cfa7a40c99b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-24 18:47:43 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-24 18:47:43 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-24 18:47:43 | D |   Attempting to acquire lock 140182828764144 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/2c19f6666e0e163c7954df66cb901353fcad088e.lock
+25-12-24 18:47:43 | D |   Lock 140182828764144 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/2c19f6666e0e163c7954df66cb901353fcad088e.lock
+25-12-24 18:47:44 | D |   https://huggingface.co:443 "GET /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 None
+25-12-24 18:47:44 | D |   Attempting to release lock 140182828764144 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/2c19f6666e0e163c7954df66cb901353fcad088e.lock
+25-12-24 18:47:44 | D |   Lock 140182828764144 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/2c19f6666e0e163c7954df66cb901353fcad088e.lock
+25-12-24 18:47:44 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/adapter_config.json HTTP/1.1" 404 0
+25-12-24 18:47:44 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-24 18:47:45 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-24 18:47:45 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/model.safetensors HTTP/1.1" 302 0
+25-12-24 18:47:45 | D |   Attempting to acquire lock 140182804212976 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb.lock
+25-12-24 18:47:45 | D |   Lock 140182804212976 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb.lock
+25-12-24 18:47:45 | D |   https://huggingface.co:443 "GET /api/models/openai/clip-vit-large-patch14/xet-read-token/32bd64288804d66eefd0ccbe215aa642df71cc41 HTTP/1.1" 200 417
+25-12-24 18:50:00 | D |   Attempting to release lock 140182804212976 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb.lock
+25-12-24 18:50:00 | D |   Lock 140182804212976 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/a2bf730a0c7debf160f7a6b50b3aaf3703e7e88ac73de7a314903141db026dcb.lock
+25-12-24 18:50:00 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/preprocessor_config.json HTTP/1.1" 307 0
+25-12-24 18:50:01 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/preprocessor_config.json HTTP/1.1" 200 0
+25-12-24 18:50:01 | D |   Attempting to acquire lock 140182835373424 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/5a12a1eb250987a4eee0e3e7d7338c4b22724be1.lock
+25-12-24 18:50:01 | D |   Lock 140182835373424 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/5a12a1eb250987a4eee0e3e7d7338c4b22724be1.lock
+25-12-24 18:50:01 | D |   https://huggingface.co:443 "GET /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/preprocessor_config.json HTTP/1.1" 200 316
+25-12-24 18:50:01 | D |   Attempting to release lock 140182835373424 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/5a12a1eb250987a4eee0e3e7d7338c4b22724be1.lock
+25-12-24 18:50:01 | D |   Lock 140182835373424 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/5a12a1eb250987a4eee0e3e7d7338c4b22724be1.lock
+25-12-24 18:50:01 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+25-12-24 18:50:02 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/tokenizer_config.json HTTP/1.1" 200 0
+25-12-24 18:50:02 | D |   Attempting to acquire lock 140182828166912 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/702bb12920b291cade3706cf215c1604d2255d93.lock
+25-12-24 18:50:02 | D |   Lock 140182828166912 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/702bb12920b291cade3706cf215c1604d2255d93.lock
+25-12-24 18:50:02 | D |   https://huggingface.co:443 "GET /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/tokenizer_config.json HTTP/1.1" 200 905
+25-12-24 18:50:02 | D |   Attempting to release lock 140182828166912 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/702bb12920b291cade3706cf215c1604d2255d93.lock
+25-12-24 18:50:02 | D |   Lock 140182828166912 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/702bb12920b291cade3706cf215c1604d2255d93.lock
+25-12-24 18:50:03 | D |   https://huggingface.co:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+25-12-24 18:50:03 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/vocab.json HTTP/1.1" 307 0
+25-12-24 18:50:03 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/vocab.json HTTP/1.1" 200 0
+25-12-24 18:50:03 | D |   Attempting to acquire lock 140183239956704 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/4297ea6a8d2bae1fea8f48b45e257814dcb11f69.lock
+25-12-24 18:50:03 | D |   Lock 140183239956704 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/4297ea6a8d2bae1fea8f48b45e257814dcb11f69.lock
+25-12-24 18:50:04 | D |   https://huggingface.co:443 "GET /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/vocab.json HTTP/1.1" 200 None
+25-12-24 18:50:04 | D |   Attempting to release lock 140183239956704 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/4297ea6a8d2bae1fea8f48b45e257814dcb11f69.lock
+25-12-24 18:50:04 | D |   Lock 140183239956704 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/4297ea6a8d2bae1fea8f48b45e257814dcb11f69.lock
+25-12-24 18:50:04 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/merges.txt HTTP/1.1" 307 0
+25-12-24 18:50:05 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/merges.txt HTTP/1.1" 200 0
+25-12-24 18:50:05 | D |   Attempting to acquire lock 140183239953584 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/76e821f1b6f0a9709293c3b6b51ed90980b3166b.lock
+25-12-24 18:50:05 | D |   Lock 140183239953584 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/76e821f1b6f0a9709293c3b6b51ed90980b3166b.lock
+25-12-24 18:50:05 | D |   https://huggingface.co:443 "GET /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/merges.txt HTTP/1.1" 200 None
+25-12-24 18:50:05 | D |   Attempting to release lock 140183239953584 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/76e821f1b6f0a9709293c3b6b51ed90980b3166b.lock
+25-12-24 18:50:05 | D |   Lock 140183239953584 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/76e821f1b6f0a9709293c3b6b51ed90980b3166b.lock
+25-12-24 18:50:06 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/tokenizer.json HTTP/1.1" 307 0
+25-12-24 18:50:06 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/tokenizer.json HTTP/1.1" 200 0
+25-12-24 18:50:06 | D |   Attempting to acquire lock 140183257847888 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/580c79c6862f31d1f9bd08dd1a415ba0d0502cd9.lock
+25-12-24 18:50:06 | D |   Lock 140183257847888 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/580c79c6862f31d1f9bd08dd1a415ba0d0502cd9.lock
+25-12-24 18:50:07 | D |   https://huggingface.co:443 "GET /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/tokenizer.json HTTP/1.1" 200 None
+25-12-24 18:50:07 | D |   Attempting to release lock 140183257847888 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/580c79c6862f31d1f9bd08dd1a415ba0d0502cd9.lock
+25-12-24 18:50:07 | D |   Lock 140183257847888 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/580c79c6862f31d1f9bd08dd1a415ba0d0502cd9.lock
+25-12-24 18:50:07 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/added_tokens.json HTTP/1.1" 404 0
+25-12-24 18:50:08 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/special_tokens_map.json HTTP/1.1" 307 0
+25-12-24 18:50:08 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/special_tokens_map.json HTTP/1.1" 200 0
+25-12-24 18:50:08 | D |   Attempting to acquire lock 140183239955072 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/9bfb42aa97dcd61e89f279ccaee988bccb4fabae.lock
+25-12-24 18:50:08 | D |   Lock 140183239955072 acquired on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/9bfb42aa97dcd61e89f279ccaee988bccb4fabae.lock
+25-12-24 18:50:08 | D |   https://huggingface.co:443 "GET /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/special_tokens_map.json HTTP/1.1" 200 389
+25-12-24 18:50:08 | D |   Attempting to release lock 140183239955072 on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/9bfb42aa97dcd61e89f279ccaee988bccb4fabae.lock
+25-12-24 18:50:08 | D |   Lock 140183239955072 released on /home/jby_25113050052/.cache/huggingface/hub/.locks/models--openai--clip-vit-large-patch14/9bfb42aa97dcd61e89f279ccaee988bccb4fabae.lock
+25-12-24 18:50:09 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+25-12-24 18:50:09 | D |   https://huggingface.co:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+25-12-24 18:50:10 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/processor_config.json HTTP/1.1" 404 0
+25-12-24 18:50:10 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.json HTTP/1.1" 404 0
+25-12-24 18:50:11 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+25-12-24 18:50:11 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/audio_tokenizer_config.json HTTP/1.1" 404 0
+25-12-24 18:50:14 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-24 18:50:15 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-24 18:50:15 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-24 18:50:15 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-24 18:50:16 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/preprocessor_config.json HTTP/1.1" 307 0
+25-12-24 18:50:16 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/preprocessor_config.json HTTP/1.1" 200 0
+25-12-24 18:50:16 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+25-12-24 18:50:17 | D |   https://huggingface.co:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/tokenizer_config.json HTTP/1.1" 200 0
+25-12-24 18:50:17 | D |   https://huggingface.co:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+25-12-24 18:50:18 | D |   https://huggingface.co:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+25-12-24 18:50:18 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/processor_config.json HTTP/1.1" 404 0
+25-12-24 18:50:18 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.json HTTP/1.1" 404 0
+25-12-24 18:50:19 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+25-12-24 18:50:19 | D |   https://huggingface.co:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/audio_tokenizer_config.json HTTP/1.1" 404 0
+25-12-24 19:45:06 | I | * Saving results to /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0/run-5000-251224.104355

@@ -1,13 +1,16 @@
 .tmp
 .tmp/
-baselines
-baselines/
-benchmarks
-benchmarks/
-caches
-caches/
-datasets
+
+# 排除生成的样本图片（太大）
+**/samples/
+**/cache/
+
+# 排除数据集缓存
 datasets/
-visualize/runs
+caches/
+
+# 排除可视化运行目录
 visualize/runs/
+
+# 排除 LaTeX 编译产物
 *.pdf

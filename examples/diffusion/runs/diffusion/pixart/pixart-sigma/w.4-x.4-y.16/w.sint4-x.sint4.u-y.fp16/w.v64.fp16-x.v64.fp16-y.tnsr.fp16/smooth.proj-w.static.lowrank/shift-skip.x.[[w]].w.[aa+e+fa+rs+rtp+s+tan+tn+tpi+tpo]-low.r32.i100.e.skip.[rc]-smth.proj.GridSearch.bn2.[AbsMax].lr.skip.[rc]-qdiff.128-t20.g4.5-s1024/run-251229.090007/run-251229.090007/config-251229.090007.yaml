@@ -1,0 +1,255 @@
+enable_cache: true
+cache:
+  root: runs
+output:
+  root: runs
+  dirname: shift-skip.x.[[w]].w.[aa+e+fa+rs+rtp+s+tan+tn+tpi+tpo]-low.r32.i100.e.skip.[rc]-smth.proj.GridSearch.bn2.[AbsMax].lr.skip.[rc]-qdiff.128-t20.g4.5-s1024
+  job: run
+pipeline:
+  name: pixart-sigma
+  path: ''
+  dtype: torch.float16
+  device: cuda
+  shift_activations: true
+  enable_lora: false
+  task: text-to-image
+eval:
+  protocol: dpm20-g4.5
+  num_gpus: 1
+  batch_size: 1
+  batch_size_per_gpu: 1
+  height: null
+  width: null
+  clean_caption: null
+  num_steps: 20
+  guidance_scale: 4.5
+  num_samples: 1024
+  benchmarks:
+  - MJHQ
+  gt_metrics:
+  - clip_iqa
+  - clip_score
+  - image_reward
+  - fid
+  ref_metrics:
+  - psnr
+  - lpips
+  - ssim
+  - fid
+  gen_root: '{output}/{job}'
+  ref_root: /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.float16/pixart-sigma/dpm20-g4.5
+  gt_stats_root: benchmarks/stats
+  control_root: benchmarks
+  chunk_start: 0
+  chunk_step: 1
+  chunk_only: false
+quant:
+  wgts:
+    dtype: sint4
+    zero_point: null
+    group_shapes:
+    - - 1
+      - 64
+      - 1
+    scale_dtypes:
+    - null
+    enable_kernel_gptq: false
+    enable_low_rank: true
+    low_rank:
+      rank: 32
+      exclusive: false
+      compensate: false
+      degree: 2
+      objective: OutputsError
+      strategy: Manual
+      sample_batch_size: -1
+      sample_size: -1
+      outputs_device: cpu
+      num_iters: 100
+      early_stop: true
+      skips:
+      - down_resblock_conv
+      - mid_resblock_conv
+      - up_resblock_conv
+    enable_calib_range: true
+    calib_range:
+      degree: 2
+      objective: OutputsError
+      strategy: Manual
+      granularity: Layer
+      element_batch_size: -1
+      sample_batch_size: -1
+      element_size: -1
+      sample_size: -1
+      pre_reshape: true
+      outputs_device: cpu
+      ratio: 1.0
+      max_shrink: 0.2
+      max_expand: 1.0
+      num_grids: 80
+      allow_scale: false
+      skips: []
+    skips:
+    - attn_add_out_proj
+    - attn_add_qkv_proj
+    - down_attn_add_out_proj
+    - down_attn_add_qkv_proj
+    - down_ffn_add_down_proj
+    - down_ffn_add_up_proj
+    - down_resblock_shortcut
+    - down_resblock_time_proj
+    - down_sample
+    - down_transformer_add_norm
+    - down_transformer_norm
+    - down_transformer_proj_in
+    - down_transformer_proj_out
+    - ffn_add_down_proj
+    - ffn_add_up_proj
+    - input_embed
+    - mid_attn_add_out_proj
+    - mid_attn_add_qkv_proj
+    - mid_ffn_add_down_proj
+    - mid_ffn_add_up_proj
+    - mid_resblock_shortcut
+    - mid_resblock_time_proj
+    - mid_transformer_add_norm
+    - mid_transformer_norm
+    - mid_transformer_proj_in
+    - mid_transformer_proj_out
+    - output_embed
+    - text_embed
+    - time_embed
+    - transformer_add_norm
+    - transformer_norm
+    - up_attn_add_out_proj
+    - up_attn_add_qkv_proj
+    - up_ffn_add_down_proj
+    - up_ffn_add_up_proj
+    - up_resblock_shortcut
+    - up_resblock_time_proj
+    - up_sample
+    - up_transformer_add_norm
+    - up_transformer_norm
+    - up_transformer_proj_in
+    - up_transformer_proj_out
+  ipts:
+    dtype: sint4
+    zero_point: null
+    group_shapes:
+    - - 1
+      - 64
+      - 1
+    scale_dtypes:
+    - null
+    static: false
+    enable_calib_range: false
+    skips:
+    - attn_add_out_proj
+    - attn_add_qkv_proj
+    - down_attn_add_out_proj
+    - down_attn_add_qkv_proj
+    - down_ffn_add_down_proj
+    - down_ffn_add_up_proj
+    - down_resblock_shortcut
+    - down_resblock_time_proj
+    - down_sample
+    - down_transformer_add_norm
+    - down_transformer_norm
+    - down_transformer_proj_in
+    - down_transformer_proj_out
+    - ffn_add_down_proj
+    - ffn_add_up_proj
+    - input_embed
+    - mid_attn_add_out_proj
+    - mid_attn_add_qkv_proj
+    - mid_ffn_add_down_proj
+    - mid_ffn_add_up_proj
+    - mid_resblock_shortcut
+    - mid_resblock_time_proj
+    - mid_transformer_add_norm
+    - mid_transformer_norm
+    - mid_transformer_proj_in
+    - mid_transformer_proj_out
+    - output_embed
+    - text_embed
+    - time_embed
+    - transformer_add_norm
+    - transformer_norm
+    - up_attn_add_out_proj
+    - up_attn_add_qkv_proj
+    - up_ffn_add_down_proj
+    - up_ffn_add_up_proj
+    - up_resblock_shortcut
+    - up_resblock_time_proj
+    - up_sample
+    - up_transformer_add_norm
+    - up_transformer_norm
+    - up_transformer_proj_in
+    - up_transformer_proj_out
+    allow_unsigned: true
+  opts:
+    dtype: null
+    zero_point: null
+    group_shapes:
+    - - -1
+      - -1
+      - -1
+    scale_dtypes:
+    - null
+    static: false
+    enable_calib_range: false
+    skips: []
+    allow_unsigned: false
+  enable_extra_wgts: false
+  calib:
+    data: qdiff
+    num_samples: 128
+    batch_size: 256
+    path: /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/datasets/torch.float16/pixart-sigma/dpm20-g4.5/qdiff/s128
+    num_workers: 8
+  enable_rotation: false
+  enable_smooth: true
+  smooth:
+    enable_proj: true
+    proj:
+      degree: 2
+      objective: OutputsError
+      strategy: GridSearch
+      granularity: Layer
+      element_batch_size: -1
+      sample_batch_size: -1
+      element_size: -1
+      sample_size: -1
+      pre_reshape: true
+      outputs_device: cpu
+      fuse_when_possible: false
+      allow_a_quant: true
+      allow_b_quant: true
+      spans:
+      - - AbsMax
+        - AbsMax
+      alpha: 0.5
+      beta: -2
+      num_grids: 20
+      allow_low_rank: true
+      skips:
+      - down_resblock_conv
+      - mid_resblock_conv
+      - up_resblock_conv
+    enable_attn: false
+  develop_dtype: torch.float32
+enable_text: false
+text_cache:
+  root: ''
+  path:
+    rotation: ''
+    reorder: ''
+    smooth: ''
+    wgts: ''
+    acts: ''
+seed: 12345
+skip_gen: false
+skip_eval: false
+load_from: ''
+save_model: 'true'
+copy_on_save: false

@@ -1,0 +1,380 @@
+25-12-26 15:36:30 | I | === Configurations ===
+25-12-26 15:36:30 | I | DiffusionPtqRunConfig(
+25-12-26 15:36:30 | I |   cache=DiffusionPtqCacheConfig(
+25-12-26 15:36:30 | I |     root=runs,
+25-12-26 15:36:30 | I |     dirpath=None,
+25-12-26 15:36:30 | I |     path=None),
+25-12-26 15:36:30 | I |   output=OutputConfig(
+25-12-26 15:36:30 | I |     root=runs,
+25-12-26 15:36:30 | I |     dirname=reference,
+25-12-26 15:36:30 | I |     job=run-1024,
+25-12-26 15:36:30 | I |     dirpath=/cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0,
+25-12-26 15:36:30 | I |     timestamp=251226.153630),
+25-12-26 15:36:30 | I |   pipeline=DiffusionPipelineConfig(
+25-12-26 15:36:30 | I |     name=flux.1-schnell,
+25-12-26 15:36:30 | I |     path=,
+25-12-26 15:36:30 | I |     dtype=torch.bfloat16,
+25-12-26 15:36:30 | I |     device=cuda,
+25-12-26 15:36:30 | I |     shift_activations=False,
+25-12-26 15:36:30 | I |     lora=None,
+25-12-26 15:36:30 | I |     family=flux.1,
+25-12-26 15:36:30 | I |     task=text-to-image),
+25-12-26 15:36:30 | I |   eval=DiffusionEvalConfig(
+25-12-26 15:36:30 | I |     protocol=fmeuler4-g0,
+25-12-26 15:36:30 | I |     num_gpus=1,
+25-12-26 15:36:30 | I |     batch_size=1,
+25-12-26 15:36:30 | I |     batch_size_per_gpu=1,
+25-12-26 15:36:30 | I |     height=None,
+25-12-26 15:36:30 | I |     width=None,
+25-12-26 15:36:30 | I |     clean_caption=None,
+25-12-26 15:36:30 | I |     num_steps=4,
+25-12-26 15:36:30 | I |     guidance_scale=0,
+25-12-26 15:36:30 | I |     num_samples=1024,
+25-12-26 15:36:30 | I |     benchmarks=['MJHQ'],
+25-12-26 15:36:30 | I |     gt_metrics=['clip_iqa', 'clip_score', 'image_reward', 'fid'],
+25-12-26 15:36:30 | I |     ref_metrics=['psnr', 'lpips', 'ssim', 'fid'],
+25-12-26 15:36:30 | I |     gen_root={output},
+25-12-26 15:36:30 | I |     ref_root=,
+25-12-26 15:36:30 | I |     gt_stats_root=benchmarks/stats,
+25-12-26 15:36:30 | I |     control_root=benchmarks,
+25-12-26 15:36:30 | I |     chunk_start=0,
+25-12-26 15:36:30 | I |     chunk_step=1,
+25-12-26 15:36:30 | I |     chunk_only=False),
+25-12-26 15:36:30 | I |   quant=DiffusionQuantConfig(
+25-12-26 15:36:30 | I |     wgts=DiffusionWeightQuantizerConfig(
+25-12-26 15:36:30 | I |       dtype=None,
+25-12-26 15:36:30 | I |       zero_point=None,
+25-12-26 15:36:30 | I |       group_shapes=((-1, -1, -1),),
+25-12-26 15:36:30 | I |       scale_dtypes=(None,),
+25-12-26 15:36:30 | I |       static=False,
+25-12-26 15:36:30 | I |       kernel_gptq=None,
+25-12-26 15:36:30 | I |       low_rank=None,
+25-12-26 15:36:30 | I |       calib_range=None,
+25-12-26 15:36:30 | I |       skips=[]),
+25-12-26 15:36:30 | I |     ipts=DiffusionActivationQuantizerConfig(
+25-12-26 15:36:30 | I |       dtype=None,
+25-12-26 15:36:30 | I |       zero_point=None,
+25-12-26 15:36:30 | I |       group_shapes=((-1, -1, -1),),
+25-12-26 15:36:30 | I |       scale_dtypes=(None,),
+25-12-26 15:36:30 | I |       static=False,
+25-12-26 15:36:30 | I |       kernel_gptq=None,
+25-12-26 15:36:30 | I |       low_rank=None,
+25-12-26 15:36:30 | I |       calib_range=None,
+25-12-26 15:36:30 | I |       skips=[],
+25-12-26 15:36:30 | I |       allow_unsigned=False),
+25-12-26 15:36:30 | I |     opts=DiffusionActivationQuantizerConfig(
+25-12-26 15:36:30 | I |       dtype=None,
+25-12-26 15:36:30 | I |       zero_point=None,
+25-12-26 15:36:30 | I |       group_shapes=((-1, -1, -1),),
+25-12-26 15:36:30 | I |       scale_dtypes=(None,),
+25-12-26 15:36:30 | I |       static=False,
+25-12-26 15:36:30 | I |       kernel_gptq=None,
+25-12-26 15:36:30 | I |       low_rank=None,
+25-12-26 15:36:30 | I |       calib_range=None,
+25-12-26 15:36:30 | I |       skips=[],
+25-12-26 15:36:30 | I |       allow_unsigned=False),
+25-12-26 15:36:30 | I |     extra_wgts=None,
+25-12-26 15:36:30 | I |     unsigned_ipts=DiffusionActivationQuantizerConfig(
+25-12-26 15:36:30 | I |       dtype=None,
+25-12-26 15:36:30 | I |       zero_point=None,
+25-12-26 15:36:30 | I |       group_shapes=((-1, -1, -1),),
+25-12-26 15:36:30 | I |       scale_dtypes=(None,),
+25-12-26 15:36:30 | I |       static=False,
+25-12-26 15:36:30 | I |       kernel_gptq=None,
+25-12-26 15:36:30 | I |       low_rank=None,
+25-12-26 15:36:30 | I |       calib_range=None,
+25-12-26 15:36:30 | I |       skips=[],
+25-12-26 15:36:30 | I |       allow_unsigned=False),
+25-12-26 15:36:30 | I |     calib=DiffusionCalibCacheLoaderConfig(
+25-12-26 15:36:30 | I |       data=qdiff,
+25-12-26 15:36:30 | I |       num_samples=128,
+25-12-26 15:36:30 | I |       batch_size=16,
+25-12-26 15:36:30 | I |       path=/cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/datasets/torch.bfloat16/flux.1-schnell/fmeuler4-g0/qdiff/s128,
+25-12-26 15:36:30 | I |       num_workers=8),
+25-12-26 15:36:30 | I |     rotation=None,
+25-12-26 15:36:30 | I |     smooth=None,
+25-12-26 15:36:30 | I |     develop_dtype=torch.float32),
+25-12-26 15:36:30 | I |   text=None,
+25-12-26 15:36:30 | I |   text_cache=LlmCacheConfig(
+25-12-26 15:36:30 | I |     root=,
+25-12-26 15:36:30 | I |     dirpath=LlmQuantCacheConfig(
+25-12-26 15:36:30 | I |       rotation=,
+25-12-26 15:36:30 | I |       reorder=,
+25-12-26 15:36:30 | I |       smooth=,
+25-12-26 15:36:30 | I |       wgts=,
+25-12-26 15:36:30 | I |       acts=),
+25-12-26 15:36:30 | I |     path=LlmQuantCacheConfig(
+25-12-26 15:36:30 | I |       rotation=,
+25-12-26 15:36:30 | I |       reorder=,
+25-12-26 15:36:30 | I |       smooth=,
+25-12-26 15:36:30 | I |       wgts=,
+25-12-26 15:36:30 | I |       acts=)),
+25-12-26 15:36:30 | I |   seed=12345,
+25-12-26 15:36:30 | I |   skip_gen=False,
+25-12-26 15:36:30 | I |   skip_eval=False,
+25-12-26 15:36:30 | I |   load_from=,
+25-12-26 15:36:30 | I |   save_model=,
+25-12-26 15:36:30 | I |   copy_on_save=False)
+25-12-26 15:36:30 | I | === Dumped Configurations ===
+25-12-26 15:36:30 | I | { 'cache': {'root': 'runs'},
+25-12-26 15:36:30 | I |   'copy_on_save': False,
+25-12-26 15:36:30 | I |   'enable_cache': True,
+25-12-26 15:36:30 | I |   'enable_text': False,
+25-12-26 15:36:30 | I |   'eval': { 'batch_size': 1,
+25-12-26 15:36:30 | I |             'batch_size_per_gpu': 1,
+25-12-26 15:36:30 | I |             'benchmarks': ['MJHQ'],
+25-12-26 15:36:30 | I |             'chunk_only': False,
+25-12-26 15:36:30 | I |             'chunk_start': 0,
+25-12-26 15:36:30 | I |             'chunk_step': 1,
+25-12-26 15:36:30 | I |             'clean_caption': None,
+25-12-26 15:36:30 | I |             'control_root': 'benchmarks',
+25-12-26 15:36:30 | I |             'gen_root': '{output}',
+25-12-26 15:36:30 | I |             'gt_metrics': ['clip_iqa', 'clip_score', 'image_reward', 'fid'],
+25-12-26 15:36:30 | I |             'gt_stats_root': 'benchmarks/stats',
+25-12-26 15:36:30 | I |             'guidance_scale': 0,
+25-12-26 15:36:30 | I |             'height': None,
+25-12-26 15:36:30 | I |             'num_gpus': 1,
+25-12-26 15:36:30 | I |             'num_samples': 1024,
+25-12-26 15:36:30 | I |             'num_steps': 4,
+25-12-26 15:36:30 | I |             'protocol': 'fmeuler4-g0',
+25-12-26 15:36:30 | I |             'ref_metrics': ['psnr', 'lpips', 'ssim', 'fid'],
+25-12-26 15:36:30 | I |             'ref_root': '',
+25-12-26 15:36:30 | I |             'width': None},
+25-12-26 15:36:30 | I |   'load_from': '',
+25-12-26 15:36:30 | I |   'output': {'dirname': 'reference', 'job': 'run-1024', 'root': 'runs'},
+25-12-26 15:36:30 | I |   'pipeline': { 'device': 'cuda',
+25-12-26 15:36:30 | I |                 'dtype': 'torch.bfloat16',
+25-12-26 15:36:30 | I |                 'enable_lora': False,
+25-12-26 15:36:30 | I |                 'name': 'flux.1-schnell',
+25-12-26 15:36:30 | I |                 'path': '',
+25-12-26 15:36:30 | I |                 'shift_activations': False,
+25-12-26 15:36:30 | I |                 'task': 'text-to-image'},
+25-12-26 15:36:30 | I |   'quant': { 'calib': { 'batch_size': 16,
+25-12-26 15:36:30 | I |                         'data': 'qdiff',
+25-12-26 15:36:30 | I |                         'num_samples': 128,
+25-12-26 15:36:30 | I |                         'num_workers': 8,
+25-12-26 15:36:30 | I |                         'path': '/cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/datasets/torch.bfloat16/flux.1-schnell/fmeuler4-g0/qdiff/s128'},
+25-12-26 15:36:30 | I |              'develop_dtype': 'torch.float32',
+25-12-26 15:36:30 | I |              'enable_extra_wgts': False,
+25-12-26 15:36:30 | I |              'enable_rotation': False,
+25-12-26 15:36:30 | I |              'enable_smooth': False,
+25-12-26 15:36:30 | I |              'ipts': { 'allow_unsigned': False,
+25-12-26 15:36:30 | I |                        'dtype': None,
+25-12-26 15:36:30 | I |                        'enable_calib_range': False,
+25-12-26 15:36:30 | I |                        'group_shapes': [[-1, -1, -1]],
+25-12-26 15:36:30 | I |                        'scale_dtypes': [None],
+25-12-26 15:36:30 | I |                        'skips': [],
+25-12-26 15:36:30 | I |                        'static': False,
+25-12-26 15:36:30 | I |                        'zero_point': None},
+25-12-26 15:36:30 | I |              'opts': { 'allow_unsigned': False,
+25-12-26 15:36:30 | I |                        'dtype': None,
+25-12-26 15:36:30 | I |                        'enable_calib_range': False,
+25-12-26 15:36:30 | I |                        'group_shapes': [[-1, -1, -1]],
+25-12-26 15:36:30 | I |                        'scale_dtypes': [None],
+25-12-26 15:36:30 | I |                        'skips': [],
+25-12-26 15:36:30 | I |                        'static': False,
+25-12-26 15:36:30 | I |                        'zero_point': None},
+25-12-26 15:36:30 | I |              'wgts': { 'dtype': None,
+25-12-26 15:36:30 | I |                        'enable_calib_range': False,
+25-12-26 15:36:30 | I |                        'enable_kernel_gptq': False,
+25-12-26 15:36:30 | I |                        'enable_low_rank': False,
+25-12-26 15:36:30 | I |                        'group_shapes': [[-1, -1, -1]],
+25-12-26 15:36:30 | I |                        'scale_dtypes': [None],
+25-12-26 15:36:30 | I |                        'skips': [],
+25-12-26 15:36:30 | I |                        'zero_point': None}},
+25-12-26 15:36:30 | I |   'save_model': '',
+25-12-26 15:36:30 | I |   'seed': 12345,
+25-12-26 15:36:30 | I |   'skip_eval': False,
+25-12-26 15:36:30 | I |   'skip_gen': False,
+25-12-26 15:36:30 | I |   'text_cache': {'path': {'acts': '', 'reorder': '', 'rotation': '', 'smooth': '', 'wgts': ''}, 'root': ''}}
+25-12-26 15:36:30 | I | === Output Directory ===
+25-12-26 15:36:30 | I | /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0/run-1024-251226.153630
+25-12-26 15:36:30 | I | === Start Evaluating ===
+25-12-26 15:36:30 | I | * Building diffusion model pipeline
+25-12-26 15:36:30 | D |   Starting new HTTPS connection (1): hf-mirror.com:443
+25-12-26 15:36:32 | D |   https://hf-mirror.com:443 "HEAD /black-forest-labs/FLUX.1-schnell/resolve/main/model_index.json HTTP/1.1" 403 0
+25-12-26 15:36:32 | D |   https://hf-mirror.com:443 "GET /api/models/black-forest-labs/FLUX.1-schnell HTTP/1.1" 200 2160
+25-12-26 15:36:33 | D |   https://hf-mirror.com:443 "HEAD /black-forest-labs/FLUX.1-schnell/resolve/main/model_index.json HTTP/1.1" 403 0
+25-12-26 15:36:50 | I |   Replacing fused Linear with ConcatLinear.
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.0 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.1 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.2 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.3 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.4 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.5 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.6 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.7 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.8 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.9 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.10 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.11 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.12 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.13 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.14 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.15 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.16 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.17 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.18 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.19 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.20 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.21 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.22 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.23 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.24 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.25 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.26 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.27 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.28 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.29 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.30 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.31 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.32 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.33 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.34 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.35 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.36 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I |     + Replacing fused Linear in single_transformer_blocks.37 with ConcatLinear.
+25-12-26 15:36:50 | I |       - in_features = 3072/15360
+25-12-26 15:36:50 | I |       - out_features = 3072
+25-12-26 15:36:50 | I | * Evaluating model 
+25-12-26 15:36:50 | D |   Attempting to acquire lock 140583101400512 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 15:36:50 | D |   Lock 140583101400512 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 15:36:50 | D |   Attempting to release lock 140583101400512 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 15:36:50 | D |   Lock 140583101400512 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 15:36:50 | D |   Attempting to acquire lock 140583101400704 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-7d12c30b2f72690f_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-26 15:36:50 | D |   Lock 140583101400704 acquired on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-7d12c30b2f72690f_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-26 15:36:50 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-7d12c30b2f72690f/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2/dataset_info.json
+25-12-26 15:36:50 | D |   Attempting to release lock 140583101400704 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-7d12c30b2f72690f_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-26 15:36:50 | D |   Lock 140583101400704 released on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-7d12c30b2f72690f_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-26 15:36:50 | D |   Attempting to acquire lock 140583104511536 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 15:36:50 | D |   Lock 140583104511536 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 15:36:50 | D |   Attempting to release lock 140583104511536 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 15:36:50 | D |   Lock 140583104511536 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 15:36:50 | D |   Attempting to acquire lock 140583104510960 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-7d12c30b2f72690f/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-26 15:36:50 | D |   Lock 140583104510960 acquired on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-7d12c30b2f72690f/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-26 15:36:50 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-7d12c30b2f72690f/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2/dataset_info.json
+25-12-26 15:36:50 | D |   Attempting to release lock 140583104510960 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-7d12c30b2f72690f/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-26 15:36:50 | D |   Lock 140583104510960 released on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-7d12c30b2f72690f/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-26 15:36:50 | I |     MJHQ has 1024 samples (chunk_start=0, chunk_step=1, unchunk_size=1024)
+25-12-26 16:21:15 | D |   Attempting to acquire lock 140583101331888 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 16:21:15 | D |   Lock 140583101331888 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 16:21:15 | D |   Attempting to release lock 140583101331888 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 16:21:15 | D |   Lock 140583101331888 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 16:21:15 | D |   Attempting to acquire lock 140583140188736 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-68d8c979dbde77b1_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-26 16:21:15 | D |   Lock 140583140188736 acquired on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-68d8c979dbde77b1_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-26 16:21:15 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-68d8c979dbde77b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2/dataset_info.json
+25-12-26 16:21:15 | D |   Attempting to release lock 140583140188736 on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-68d8c979dbde77b1_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-26 16:21:15 | D |   Lock 140583140188736 released on /home/jby_25113050052/.cache/huggingface/datasets/_home_jby_25113050052_.cache_huggingface_datasets_mjhq_MJHQ-68d8c979dbde77b1_0.0.0_6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2.lock
+25-12-26 16:21:15 | D |   Attempting to acquire lock 140582415693392 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 16:21:15 | D |   Lock 140582415693392 acquired on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 16:21:15 | D |   Attempting to release lock 140582415693392 on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 16:21:15 | D |   Lock 140582415693392 released on /home/jby_25113050052/.cache/huggingface/modules/datasets_modules/datasets/MJHQ.lock
+25-12-26 16:21:15 | D |   Attempting to acquire lock 140583140188736 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-68d8c979dbde77b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-26 16:21:15 | D |   Lock 140583140188736 acquired on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-68d8c979dbde77b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-26 16:21:15 | D |   open file: /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-68d8c979dbde77b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2/dataset_info.json
+25-12-26 16:21:15 | D |   Attempting to release lock 140583140188736 on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-68d8c979dbde77b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-26 16:21:15 | D |   Lock 140583140188736 released on /home/jby_25113050052/.cache/huggingface/datasets/mjhq/MJHQ-68d8c979dbde77b1/0.0.0/6bbe88c42ce89dc85ccb4e46a033e19e1b4aa147e7be5c51fefd7d953c0a7bf2_builder.lock
+25-12-26 16:21:15 | D |   Resetting dropped connection: hf-mirror.com
+25-12-26 16:21:16 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-26 16:21:16 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-26 16:21:17 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-26 16:21:17 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-26 16:21:18 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/preprocessor_config.json HTTP/1.1" 307 0
+25-12-26 16:21:18 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/preprocessor_config.json HTTP/1.1" 200 0
+25-12-26 16:21:18 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+25-12-26 16:21:18 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/tokenizer_config.json HTTP/1.1" 200 0
+25-12-26 16:21:19 | D |   https://hf-mirror.com:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 429 204
+25-12-26 16:21:19 | D |   https://hf-mirror.com:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+25-12-26 16:21:19 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/processor_config.json HTTP/1.1" 404 0
+25-12-26 16:21:19 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.json HTTP/1.1" 404 0
+25-12-26 16:21:20 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+25-12-26 16:21:20 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/audio_tokenizer_config.json HTTP/1.1" 404 0
+25-12-26 16:21:21 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-26 16:21:22 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-26 16:21:22 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/config.json HTTP/1.1" 307 0
+25-12-26 16:21:22 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/config.json HTTP/1.1" 200 0
+25-12-26 16:21:23 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/preprocessor_config.json HTTP/1.1" 307 0
+25-12-26 16:21:23 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/preprocessor_config.json HTTP/1.1" 200 0
+25-12-26 16:21:23 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+25-12-26 16:21:24 | D |   https://hf-mirror.com:443 "HEAD /api/resolve-cache/models/openai/clip-vit-large-patch14/32bd64288804d66eefd0ccbe215aa642df71cc41/tokenizer_config.json HTTP/1.1" 200 0
+25-12-26 16:21:24 | D |   https://hf-mirror.com:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 429 204
+25-12-26 16:21:26 | D |   https://hf-mirror.com:443 "GET /api/models/openai/clip-vit-large-patch14/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 429 201
+25-12-26 16:21:26 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/processor_config.json HTTP/1.1" 404 0
+25-12-26 16:21:26 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.json HTTP/1.1" 404 0
+25-12-26 16:21:26 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+25-12-26 16:21:27 | D |   https://hf-mirror.com:443 "HEAD /openai/clip-vit-large-patch14/resolve/main/audio_tokenizer_config.json HTTP/1.1" 404 0
+25-12-26 16:25:25 | I | * Saving results to /cpfs01/projects-HDD/cfff-4da39d3c1e4e_HDD/jby_25113050052/projects/deepcompressor/examples/diffusion/baselines/torch.bfloat16/flux.1-schnell/fmeuler4-g0/run-1024-251226.153630
