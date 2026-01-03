@@ -1,6 +1,6 @@
 # DeepCompressor 算法复现实验
 
-本项目是对 MIT HAN Lab 开源项目 [DeepCompressor](https://github.com/mit-han-lab/deepcompressor) 的算法复现实验，主要复现了 **SVDQuant** 算法在扩散模型上的4位量化效果。
+本项目是对 MIT HAN Lab 开源项目 [DeepCompressor](https://github.com/mit-han-lab/deepcompressor) 的算法复现实验，主要复现了 **SVDQuant** 算法在扩散模型上的4bit量化效果。
 ## 项目目录结构
 ```
 deepcompressor/
